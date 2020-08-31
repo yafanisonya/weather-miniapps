@@ -90,5 +90,14 @@ const weatherMap = {
       wx.navigateTo({
         url: '/pages/list/list',
       })
+    },
+    onTapLocation(){
+      type: 'wgs84',
+      wx.getLocation({
+        success(res){
+          console.log(res)
+          console.log(res.latitude, res.longitude)
+        },
+      })
     }
   })
