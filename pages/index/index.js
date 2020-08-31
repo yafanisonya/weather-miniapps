@@ -15,6 +15,8 @@ const weatherMap = {
     'heavyrain': '#c5ccd0',
     'snow': '#aae1fc'
   }
+
+  const QQMapWX = require('../../libs/qqmap-wx-jssdk.js')
   
   Page({
     data: {
@@ -26,6 +28,9 @@ const weatherMap = {
       todayDate: ""
     },
     onLoad() {
+      this.qqmapsdk = new QQMapWX({
+        key: 'HPFBZ-E3SW6-MPRSJ-EZWJX-J5BF3-GQBC3'
+      })
       this.getNow()
     },
     onPullDownRefresh(){
@@ -37,7 +42,7 @@ const weatherMap = {
       wx.request({
         url: 'https://test-miniprogram.com/api/weather/now',
         data: {
-          city: '广州市'
+          city: '北京市'
         },
         success: res => {
           let result = res.data.result
@@ -92,12 +97,30 @@ const weatherMap = {
       })
     },
     onTapLocation(){
-      type: 'wgs84',
       wx.getLocation({
-        success(res){
-          console.log(res)
-          console.log(res.latitude, res.longitude)
-        },
+        // success: res=>{
+        //   this.qqmapsdk.reverseGeocoder({
+        //     location: {
+        //       latitude: res.latitude,
+        //       longitude: res.longitude
+        //     },
+        //     success: res=>{
+        //       let city = res.result.address_component.city
+        //       console.log(city)
+        //     }
+        //   })
+        // },
+          type: 'wgs84',
+          success (res) {
+            const latitude = res.latitude
+            const longitude = res.longitude
+            const speed = res.speed
+            const accuracy = res.accuracy
+            console.log(res)
+          },
+          fail(res){
+            console.log(res)
+          }
       })
     }
   })

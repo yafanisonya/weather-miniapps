@@ -1,11 +1,11 @@
 
 <view class="weather-wrapper">
-  <view class="location-wrapper" bindtap="onTapLocation">
-    <view class="location">
+  <view class="location-wrapper" >
+    <view class="location" bindtap='onTapLocation'>
       <image class="location-icon" src="/images/location-icon.png"></image>
       <view class="location-text">北京市</view>
     </view>
-    <view class="location-tips">点击获取当前位置</view>
+    <view class="location-tips" bindtap='onTapLocation'>点击获取当前位置</view>
   </view>
   <view class="temp">{{nowTemp}}</view>
   <view class="weather">{{nowWeather}}</view>
@@ -13,7 +13,7 @@
   <view class="day-weather" bindtap='onTapDayWeather'>
     <view class="day-text">{{todayDate}}</view>
     <view class="temp-text">{{todayTemp}}</view>
-  <image class="arrow-icon" src="/images/arrow.png"></image>
+   <image class="arrow-icon" src="/images/arrow.png"></image>
   </view>
 </view>
 
