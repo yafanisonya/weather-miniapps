@@ -87,6 +87,8 @@ const weatherMap = {
       })
     },
     onTapDayWeather(){
-      wx.showToast()
+      wx.navigateTo({
+        url: '/pages/list/list',
+      })
     }
   })
