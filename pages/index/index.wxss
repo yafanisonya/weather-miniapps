@@ -3,7 +3,7 @@
   padding-top: 20rpx;
   padding-bottom: 250rpx;
 }
-.location-warpper{
+.location-btn{
   margin-bottom:60rpx;
   font-size:30rpx;
   line-height:42rpx;

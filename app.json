@@ -6,7 +6,7 @@
     "window": {
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
+        "navigationBarTitleText": "小祖宗专用",
         "navigationBarTextStyle": "black",
         "enablePullDownRefresh": true
     },
